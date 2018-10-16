@@ -3,7 +3,7 @@ function isPureComponent (comp) {
     return false
   }
   const p = comp.prototype
-  return p.isPureReactComponent || !p.setState
+  return p && (p.render || p.isPureReactComponent || !p.setState);
 }
 
 export default isPureComponent
